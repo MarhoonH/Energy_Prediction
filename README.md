@@ -1,18 +1,12 @@
-# Energy_Prediction
-This repository contains a machine learning project that leverages PecanStreet energy data to develop two key solutions: (1) an outlier detection system for identifying anomalous energy consumption, and (2) a predictive model to forecast energy usage for specified periods.
+# WattSolution
 
-# PecanStreet Energy Data Analysis and Machine Learning Solutions
-
-This project leverages PecanStreet energy data from two selected cities to explore and model energy consumption patterns. The project has two main objectives:
-1. **Outlier Detection**: Identify unusual patterns or anomalies in energy consumption data.
-2. **Consumption Prediction**: Forecast energy usage for specified periods based on historical data and weather conditions.
-
-By combining energy consumption data with weather data, this project aims to better understand the factors influencing residential energy usage.
+WattSolution is a machine learning project designed to optimize residential energy consumption through predictive modeling and anomaly detection. By leveraging Pecan Street energy data, this repository explores how data-driven solutions can enhance energy efficiency and identify potential issues in residential energy usage.
 
 ---
 
 ## Table of Contents
 - [Project Overview](#project-overview)
+- [Repository Structure](#repository-structure)
 - [Data](#data)
 - [Setup](#setup)
 - [Usage](#usage)
@@ -24,31 +18,72 @@ By combining energy consumption data with weather data, this project aims to bet
 
 ## Project Overview
 
-This repository contains all necessary files, data, and scripts to train machine learning models for energy data analysis, including:
-- **Outlier Detection**: Detecting anomalies in energy consumption to understand unusual patterns or potential data errors.
-- **Consumption Prediction**: Building models to forecast future energy consumption, informed by past trends and weather conditions.
+WattSolution focuses on three primary goals:
+1. **Outlier Detection**: Identifying anomalies in energy consumption data to uncover unusual patterns or errors.
+2. **Energy Consumption Prediction**: Developing models to forecast future energy usage based on historical trends, weather conditions, and other factors.
+3. **WattVision and WattBot**: Creating an advanced AI-based dashboard using Streamlit to provide users with actionable insights into energy consumption patterns. The dashboard offers:
+   - **WattVision**: Interactive visualizations of energy usage trends and patterns.
+   - **WattBot**: An intelligent assistant powered by AI for answering user queries and providing tailored energy-saving tips.
 
-This project was created as a foundation for research and development on energy consumption trends, with potential applications for energy efficiency analysis, demand response programs, and smart grid optimization.
+The project integrates energy consumption and weather data to build an efficient pipeline, paving the way for actionable insights into energy usage patterns. This solution aims to assist researchers, energy providers, and households in understanding and optimizing their energy consumption.
+
+---
+
+## Repository Structure
+
+- **`data/`**: Contains all datasets used in the project.
+  - **`raw/`**: Original, unprocessed energy and weather data.
+  - **`processed/`**: Cleaned and merged datasets ready for analysis.
+- **`models/`**: Stores the trained machine learning models from the prediction pipeline.
+- **`notebooks/`**: Includes Jupyter notebooks for each step of the pipeline:
+  - `00-data_processing.ipynb`: Data cleaning and feature engineering.
+  - `01-data_exploration.ipynb`: Exploratory data analysis.
+  - `03-energy_prediction.ipynb`: Model training and validation for energy consumption predictions.
+  - `04-new_vs_old_datasets.ipynb`: Comparison of predictions for new versus old datasets.
+  - `05-run_streamlit.ipynb`: Prepares and launches the Streamlit app.
+- **`streamlit_app/`**: Contains the Streamlit application for interactive data visualization and insights.
+
+---
 
 ## Data
 
-This project uses PecanStreet's anonymized residential energy data, specifically for two selected cities. For each city, the data is divided into:
-- **Energy Consumption Data**: Contains the raw energy consumption measurements for residential properties.
-- **Weather Data**: Includes historical weather conditions corresponding to the time periods of the energy data, helping establish any relationships between weather and energy usage.
-
-### Data Files
-
-Each data file is provided in CSV format:
-- **Raw Data**: Located in `data/raw/` and includes the original files downloaded from PecanStreet.
-  - `data/raw/city1_energy.csv` – Raw energy consumption data for City 1
-  - `data/raw/city2_energy.csv` – Raw energy consumption data for City 2
-  - `data/raw/city1_weather.csv` – Weather data for City 1
-  - `data/raw/city2_weather.csv` – Weather data for City 2
-- **Processed Data**: Located in `data/processed/` and includes the cleaned and merged data, prepared for modeling.
-  - `data/processed/city1_data.csv` – Cleaned and merged data for City 1 (energy + weather)
-  - `data/processed/city2_data.csv` – Cleaned and merged data for City 2 (energy + weather)
+The project uses Pecan Street's anonymized residential energy data. The data is organized into two main folders:
+- **Raw Data (`data/raw/`)**: Unprocessed energy and weather data files.
+- **Processed Data (`data/processed/`)**: Cleaned and combined datasets prepared for analysis and modeling.
 
 ### Data Source
-
 The energy data is sourced from [PecanStreet](https://www.pecanstreet.org/), a provider of anonymized residential energy data for research purposes.
+
+---
+
+## Setup
+
+To use this repository, you will need to run the notebooks in sequential order, which mimics how a pipeline works without automated triggers. Ensure the following setup:
+1. Install Python 3.8+.
+2. Install the required libraries using:
+   ```bash
+   pip install -r requirements.txt
+
+## Usage
+
+# Step 1: Run the notebooks in order:
+# 1. 00-data_processing.ipynb: Data cleaning and feature engineering.
+# 2. 01-data_exploration.ipynb: Exploratory data analysis.
+# 3. 03-energy_prediction.ipynb: Train and validate energy consumption models.
+# 4. 04-new_vs_old_datasets.ipynb: Compare predictions between datasets.
+# 5. 05-run_streamlit.ipynb: Prepare and launch the Streamlit app.
+
+# Step 2: Launch the Streamlit app for interactive visualization:
+cd streamlit_app
+streamlit run WattWise.py
+
+
+## Results
+
+# Key outputs of the project:
+# 1. Anomaly detection insights for identifying unusual energy usage.
+# 2. Predictive models for forecasting energy consumption.
+# 3. Visualizations through the Streamlit app (WattVision).
+# 4. AI-powered insights and recommendations via WattBot.
+
 
